@@ -25,7 +25,7 @@ else
     sudo installer -pkg ./awscliv2.pkg -target /
 
     if check_aws_cli_installed; then
-        echo "${COLOR_GREEN_START}AWS CLI 설치${COLOR_END}에 성공했습니다."
+        echo -e "${COLOR_GREEN_START}AWS CLI 설치${COLOR_END}에 성공했습니다."
 	echo
 
     else
