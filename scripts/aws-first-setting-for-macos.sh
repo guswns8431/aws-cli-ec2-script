@@ -1,10 +1,11 @@
 #!/bin/bash
 
+source ./scripts/colors.sh
+
 echo -e "${BACK_COLOR_YELLOW_START}${BOLD}############################################${BOLD_END}${COLOR_END}"
 echo -e "${BACK_COLOR_YELLOW_START}${BOLD}#    aws-first-setting-for-macos.sh 시작   #${BOLD_END}${COLOR_END}"
 echo -e "${BACK_COLOR_YELLOW_START}${BOLD}############################################${BOLD_END}${COLOR_END}"
 
-source ./scripts/colors.sh
 source ./scripts/script-functions.sh
 
 if ! command -v brew &> /dev/null; then
@@ -17,7 +18,7 @@ echo -e "${COLOR_RED_START}AWS-CLI 패키지를 다운 받습니다${COLOR_END}"
 if check_aws_cli_installed; then
     echo "aws_cli 패치지가 이미 설치되어 있습니다."
 else
-    echo -e "aws_cli 패키지가 설치되어 있지 않습니다. 설치를 진행합니다.관리자 권한으로 설치합니다.${COLOR_YELLOW_START}패스워드${COLOR_END}를 입력해주세요"
+    echo -e "aws_cli 패키지가 설치되어 있지 않습니다.\n관리자 권한으로 설치 진행합니다.\n${COLOR_YELLOW_START}패스워드${COLOR_END}를 입력해주세요"
     sudo curl "https://awscli.amazonaws.com/AWSCLIV2.pkg" -o "awscliv2.pkg"
     
     echo "패키지 설치를 진행합니다"
